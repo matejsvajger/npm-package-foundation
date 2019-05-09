@@ -21,17 +21,16 @@ Skeleton for a simple NPM Package with ES2015 support and CI already configured.
 
 1. Add this project as `skeleton` remote:
 
-- For a new project:
-  ```sh
-  mkdir my-project && cd my-project
-  git init
-  git remote add skeleton https://github.com/matejsvajger/npm-package-foundation.git
-  git remote set-url skeleton --push "Error: skeleton remote is read-only" # Disable pushing on skeleton
-  git config remote.skeleton.tagOpt --no-tags # Disable fetching tags on skeleton
-  git remote add origin <YOUR GIT REPOSITORY URL>
-  git pull skeleton master --no-tags
-  git push -u origin master
-  ```
+```sh
+mkdir my-project && cd my-project
+git init
+git remote add skeleton https://github.com/matejsvajger/npm-package-foundation.git
+git remote set-url skeleton --push "Error: skeleton remote is read-only" # Disable pushing on skeleton
+git config remote.skeleton.tagOpt --no-tags # Disable fetching tags on skeleton
+git remote add origin <YOUR GIT REPOSITORY URL>
+git pull skeleton master --no-tags
+git push -u origin master
+```
 
 2.
 
