@@ -1,14 +1,10 @@
 /**
  * Exported module - returns a
  * function that resolves to true.
- *
- * @type {Closure}
- * @return {Closure}
+ * @type {Function}
  */
 function module () {
   return () => true
 }
 
-export default {
-  module
-}
+export default module
