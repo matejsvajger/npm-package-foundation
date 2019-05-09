@@ -1,6 +1,6 @@
 {
   "name": "package-foundation",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "description": "Skeleton for a simple NPM Package with ES2015 support and CI already configured.",
   "license": "MIT",
   "config": {

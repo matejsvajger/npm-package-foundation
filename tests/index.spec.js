@@ -13,5 +13,4 @@ describe('modules', () => {
   it('module function returns true', () => {
     expect(modules.module()()).toBe(true)
   })
-
 })
