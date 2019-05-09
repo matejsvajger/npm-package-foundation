@@ -5,7 +5,7 @@ Skeleton for a simple NPM Package with ES2015 support and CI already configured.
 #### Pre-configured development tools
 
 - [<img alt="Bublé" src="https://buble.surge.sh/favicon.png" height="16"> Bublé](https://buble.surge.sh/guide/)
-- [<img alt="ESLint" src="https://eslint.org/img/favicon.512x512.png" height="16"> ESLint](https://eslint.org/) with [`airbnb-base` config](https://www.npmjs.com/package/eslint-config-airbnb-base)
+- [<img alt="ESLint" src="https://eslint.org/img/favicon.512x512.png" height="16"> ESLint](https://eslint.org/) with [`standard-js` config](https://www.npmjs.com/package/eslint-standard-config)
 - [<img alt="Prettier" src="https://prettier.io/icon.png" height="16"> Prettier](https://prettier.io/)
 - [<img alt="Jest" src="https://jestjs.io/img/favicon/favicon.ico" height="16"> Jest](https://jestjs.io/)
 - [<img alt="EditorConfig" src="https://editorconfig.org/favicon.ico" height="16"> EditorConfig](https://editorconfig.org/)
