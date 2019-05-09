@@ -1,0 +1,105 @@
+{
+  "name": "package-foundation",
+  "version": "0.1.0",
+  "description": "Skeleton for a simple NPM Package with ES2015 support and CI already configured.",
+  "license": "MIT",
+  "config": {
+    "scriptName": "PackageFoundation"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matejsvajger/npm-package-foundation"
+  },
+  "author": "Matej Svajger <hello@matejsvajger.com>",
+  "engines": {
+    "node": ">=6",
+    "npm": ">=3"
+  },
+  "scripts": {
+    "dev:web": "rollup -w -c scripts/config.js --environment TARGET:web-dev",
+    "dev:cjs": "rollup -w -c scripts/config.js --environment TARGET:cjs",
+    "dev:esm": "rollup -w -c scripts/config.js --environment TARGET:esm",
+    "dev": "run-p dev:*",
+    "build:clean": "rimraf dist",
+    "build:transpile": "node scripts/build.js",
+    "build": "run-s build:*",
+    "prepublishOnly": "run-s build",
+    "doc:clean": "rimraf docs",
+    "doc:generate": "esdoc",
+    "doc": "run-s doc:*",
+    "lint:eslint": "eslint --ignore-path .eslintignore .",
+    "lint:standard": "prettier-standard 'src/**/*.js'",
+    "lint:prettier": "prettier --ignore-path .gitignore --list-different '**/*.{json,md,yml}'",
+    "lint": "run-p lint:*",
+    "start": "cross-env NODE_ENV=development jest --watch --notify",
+    "test": "jest --no-cache"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/package-foundation.js",
+  "module": "dist/package-foundation.esm.js",
+  "keywords": [
+    "package",
+    "skeleton",
+    "example",
+    "node",
+    "npm",
+    "es2015",
+    "ci",
+    "code",
+    "codecov",
+    "coverage",
+    "eslint",
+    "rollup",
+    "jest"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/preset-env": "^7.4.4",
+    "codecov": "^3.3.0",
+    "cross-env": "^5.2.0",
+    "esdoc": "^1.1.0",
+    "esdoc-standard-plugin": "^1.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^2.1.0",
+    "jest": "^24.7.1",
+    "lint-staged": "^8.1.5",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.17.0",
+    "prettier-standard": "^9.1.1",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.10.1",
+    "rollup-plugin-buble": "^0.19.6",
+    "rollup-plugin-eslint": "^5.1.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "terser": "^3.17.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*": "prettier --list-different '**/*.{json,md,yml}'",
+    "*.js": [
+      "eslint",
+      "jest --bail --findRelatedTests"
+    ]
+  },
+  "esdoc": {
+    "source": "./src",
+    "destination": "./docs",
+    "plugins": [
+      {
+        "name": "esdoc-standard-plugin"
+      }
+    ]
+  }
+}

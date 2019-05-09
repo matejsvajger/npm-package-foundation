@@ -1,0 +1,33 @@
+language: node_js
+matrix:
+  include:
+    - node_js: node # Current
+      env: BUILD_DOCS=true REPORT_COVERAGE=true
+    - node_js: lts/* # Latest LTS
+      env: NPM_DEPLOY=true
+    - node_js: lts/carbon
+    - node_js: lts/boron # Minimum required
+install:
+  - npm install --loglevel http # Prevent timeouts for inactivity
+before_script:
+  - npm run lint
+script:
+  - npm test -- --coverage
+  - '[[ "$BUILD_DOCS" != true ]] || npm run doc' # Ensures ESDoc generation doesn't fail
+  - '[[ "$REPORT_COVERAGE" != true ]] || codecov'
+after_success: >
+  if [ "$TRAVIS_PULL_REQUEST" = "false" ] && [ "$BUILD_DOCS" = "true" ]; then
+    bash <(curl -s https://gist.githubusercontent.com/matejsvajger/864691b103271a85005319741034b034/raw/5e933a4b21af4d3a9b5a7c669dafb59679b9d030/update-esdoc.sh) matejsvajger/npm-package-foundation;
+  fi
+deploy:
+  provider: npm
+  email: hello@matejsvajger.com
+  api_key: $NPM_AUTH_TOKEN
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: matejsvajger/npm-package-foundation # Prevents publishing on PRs
+    condition: $NPM_DEPLOY = true # Prevents publishing on each matrix build
+cache:
+  directories:
+    - $HOME/.npm

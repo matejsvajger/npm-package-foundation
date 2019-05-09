@@ -1,0 +1,9 @@
+{
+  "verbose": true,
+  testEnvironment: 'node',
+  coverageReporters: [
+    'lcov',
+    'text',
+    'html'
+  ]
+}
