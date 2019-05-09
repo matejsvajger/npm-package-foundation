@@ -17,7 +17,6 @@ Skeleton for a simple NPM Package with ES2015 support and CI already configured.
 - [<img alt="Codecov" src="https://codecov.io/static/favicons/favicon-16x16.png" height="16"> Codecov](https://codecov.io/) code coverage reporting
 - [<img alt="ESDoc" src="https://esdoc.org/favicon.ico" height="16"> ESDoc](https://esdoc.org/)
 
-
 ## Getting started
 
 1. Add this project as `skeleton` remote:
@@ -35,6 +34,7 @@ Skeleton for a simple NPM Package with ES2015 support and CI already configured.
   ```
 
 2.
+
 - Set initial version (ex: `0.1.0`) in `package.json`
 - Set `scriptName` in config of `package.json` for umd builds.
 
