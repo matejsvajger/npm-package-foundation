@@ -1,6 +1,6 @@
 import module from '../src'
 
-/** @test {myModule} */
+/** @test {module} */
 describe('modules', () => {
   it('exists', () => {
     expect(module).toBeDefined()
