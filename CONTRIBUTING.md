@@ -19,7 +19,7 @@ To prevent duplication, please look at [existing issues](https://github.com/mate
 
 #### Step 1. Checkout repository
 
-_**Prerequisites:** you need to have `git`, `node` (>=6) and `npm` installed_.
+_**Prerequisites:** you need to have `git`, `node` (>=8) and `npm` installed_.
 
 ```bash
 git clone https://github.com/matejsvajger/npm-package-foundation.git

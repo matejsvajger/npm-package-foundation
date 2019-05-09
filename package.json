@@ -1,6 +1,6 @@
 {
   "name": "package-foundation",
-  "version": "0.1.0-alpha.4",
+  "version": "1.0.0",
   "description": "Skeleton for a simple NPM Package with ES2015 support and CI already configured.",
   "license": "MIT",
   "config": {
@@ -87,8 +87,9 @@
     }
   },
   "lint-staged": {
-    "*": "prettier --list-different '**/*.{json,md,yml}'",
+    "*,!*.js": "prettier --list-different '**/*.{json,md,yml}'",
     "*.js": [
+      "prettier-standard 'src/**/*.js'",
       "eslint",
       "jest --bail --findRelatedTests"
     ]
