@@ -1,16 +1,16 @@
-import modules from '../src'
+import module from '../src'
 
-/** @test {myModule} */
+/** @test {module} */
 describe('modules', () => {
   it('exists', () => {
-    expect(modules).toBeDefined()
+    expect(module).toBeDefined()
   })
 
   it('module returns function', () => {
-    expect(modules.module()).toBeInstanceOf(Function)
+    expect(module()).toBeInstanceOf(Function)
   })
 
   it('module function returns true', () => {
-    expect(modules.module()()).toBe(true)
+    expect(module()()).toBe(true)
   })
 })
