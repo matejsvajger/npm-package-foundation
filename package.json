@@ -12,7 +12,7 @@
   },
   "author": "Matej Svajger <hello@matejsvajger.com>",
   "engines": {
-    "node": ">=6",
+    "node": ">=8",
     "npm": ">=3"
   },
   "scripts": {

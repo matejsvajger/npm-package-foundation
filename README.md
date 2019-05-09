@@ -90,7 +90,7 @@ This project is released under [MIT License](LICENSE.md).
 
 ## Installation
 
-Prerequisites: [Node.js](https://nodejs.org/) 6+, **npm** 3+.
+Prerequisites: [Node.js](https://nodejs.org/) 8+, **npm** 3+.
 
     npm install --save package-foundation
 
